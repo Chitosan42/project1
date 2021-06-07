@@ -11,7 +11,7 @@ export default function App() {
 
   function renderEncouragingText() {
     if (count >= 20) {
-      return "Almost there!!!!!!!!!!"
+      return "Almost there1234!!!!!!!!!!"
     } else if (count >= 10) {
       return "Keep going!!!!!!"
     }
