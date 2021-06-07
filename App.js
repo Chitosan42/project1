@@ -13,7 +13,7 @@ export default function App() {
     if (count >= 20) {
       return "Almost there!!!!!!!!!!fdmasddsamdasiodmaMDOIDMoim"
     } else if (count >= 10) {
-      return "Keep going!!!!!!"
+      return "Keep going lah!"
     }
   }
 
