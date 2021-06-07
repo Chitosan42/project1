@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   resetButton: {
-    backgroundColor: "red",
+    backgroundColor: "blue",
     padding: 10, 
     borderRadius: 10,
   }, 
