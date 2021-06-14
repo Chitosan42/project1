@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "com.pratom12.snack1f90504352574521b5582195d512eeff"
     },
     "web": {
       "favicon": "./assets/favicon.png"

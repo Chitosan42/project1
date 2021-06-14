@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "276492257104",
+    "project_id": "travel-app-9e46d",
+    "storage_bucket": "travel-app-9e46d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276492257104:android:39db5aabc85c79de2c4e55",
+        "android_client_info": {
+          "package_name": "com.spunkytortilla"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276492257104-ch3csmip9lkibn3dthj8cofid2ld1sn8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkwc835BYBKQ8e7o7EAyHlpXLeklhX0WY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276492257104-ch3csmip9lkibn3dthj8cofid2ld1sn8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
