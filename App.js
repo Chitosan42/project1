@@ -1,36 +1,49 @@
+import React, {useState} from 'react';
+import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native';
 
+export default function App() {
 
-import * as React from 'react';
-import { Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+  const [count, setCount] = useState(0)
 
-import BookingScreen from './components/BookingScreen';
-import UploadScreen from './components/BookingScreen';
-import VerificationScreen from './components/VerificationScreen';
-import QRScreen from './components/BookingScreen';
+  function increment() {
+    setCount(count + 1)
+  }
 
+  function renderEncouragingText() {
+    if (count >= 20) {
+      return "Almost there!!!!!!!!!!fdmasddsamdasiodmaMDOIDMoim"
+    } else if (count >= 10) {
+      return "Keep going lah!"
+    }
+  }
 
-function SettingsScreen() {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Settings!</Text>
+    <View style={styles.container}>
+      <Text style={{fontSize: 60}}>{count}</Text>
+      <Button title="Increment" onPress={increment}></Button>
+      <Button title="Decrement" onPress={ () => setCount(count - 1) }></Button>
+
+      <TouchableOpacity style={styles.resetButton} onPress={ () => setCount(0) }>
+        <Text style={styles.resetButtonText}>Reset</Text>
+      </TouchableOpacity>
+
+      <Text>{renderEncouragingText()}</Text>
     </View>
   );
 }
 
-const Tab = createBottomTabNavigator();
-
-export default function App() {
-  return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Booking" component={BookingScreen} />
-        <Tab.Screen name="Upload" component={UploadScreen} />
-        <Tab.Screen name="Verification" component={VerificationScreen} />
-        <Tab.Screen name="QR" component={QRScreen} />
-        
-      </Tab.Navigator>
-    </NavigationContainer>
-  );
-}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  resetButton: {
+    backgroundColor: "blue",
+    padding: 10, 
+    borderRadius: 10,
+  }, 
+  resetButtonText: {
+    color: "white"
+  }
+});
