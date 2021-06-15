@@ -1,19 +1,9 @@
-<<<<<<< HEAD
 import * as React from 'react';
 import { Button, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome } from '@expo/vector-icons';
-=======
-import * as React from "react";
-import { Button, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Ionicons from "react-native-vector-icons/Ionicons";
-import { FontAwesome } from "@expo/vector-icons";
->>>>>>> 07ed3ae211775407409938b6212f4c0134dec336
 
 //BOOKING
 function BookingScreen({ navigation }) {
