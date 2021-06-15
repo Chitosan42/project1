@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 24,
+    padding: 20,
   },
   paragraph: {
-    margin: 24,
+    margin: 20,
     marginTop: 0,
     fontSize: 14,
     fontWeight: 'bold',
