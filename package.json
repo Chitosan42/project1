@@ -17,7 +17,10 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
+<<<<<<< HEAD
     "react-native-gesture-handler": "^1.10.3",
+=======
+>>>>>>> 07ed3ae211775407409938b6212f4c0134dec336
     "react-native-paper": "3.6.0",
     "react-native-screens": "~3.0.0",
     "react-native-web": "~0.13.12"
