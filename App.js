@@ -1,157 +1,53 @@
 import * as React from 'react';
-import { Button, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { Text, View, Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { FontAwesome } from '@expo/vector-icons';
+import { NavigationContainer } from '@react-navigation/native';
 
-//BOOKING
-function BookingScreen({ navigation }) {
+import PCRTest from './components/pcrTest';
+
+function HomeScreen({navigation}) {
   return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Book an Appointment</Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>PCR-PDT Result</Text>
+      <TouchableOpacity style={styles.pcrButton} onPress={() => navigation.navigate('PCRTest')}>
+        <Text style={styles.pcrButtonText}>pcrTest</Text>
+        </TouchableOpacity>
       <Button
-        title="Choose Location"
-        onPress={() => navigation.navigate("Location")}
+        title="Business"
+        onPress={() => navigation.navigate('PCRTest')}
       />
     </View>
   );
 }
-function LocationScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Location</Text>
-    </View>
-  );
-}
-const BookStack = createStackNavigator(); //Booking stack
-function BookStackScreen() {
-  return (
-    <BookStack.Navigator>
-      <BookStack.Screen name="Booking" component={BookingScreen} />
-      <BookStack.Screen name="Location" component={LocationScreen} />
-    </BookStack.Navigator>
-  );
-}
 
-//QR
-function QRScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Scan QR Code</Text>
-      <Button title="Show PDF" onPress={() => navigation.navigate("PDF")} />
-    </View>
-  );
-}
-function QRcodeScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>PDF</Text>
-    </View>
-  );
-}
-const QRStack = createStackNavigator(); //QR stack
-function QRStackScreen() {
-  return (
-    <QRStack.Navigator>
-      <QRStack.Screen name="QR Code" component={QRScreen} />
-      <QRStack.Screen name="PDF" component={QRcodeScreen} />
-    </QRStack.Navigator>
-  );
-}
+const Stack = createStackNavigator();
 
-//VERIFICATION
-function VerificationScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Verification Status</Text>
-      <Button title="Pending" />
-    </View>
-  );
-}
-function VerifyScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>PDF</Text>
-    </View>
-  );
-}
-const VerificationStack = createStackNavigator(); //QR stack
-function VerificationStackScreen() {
-  return (
-    <VerificationStack.Navigator>
-      <VerificationStack.Screen
-        name="Verification"
-        component={VerificationScreen}
-      />
-      <VerificationStack.Screen name="PDF" component={VerifyScreen} />
-    </VerificationStack.Navigator>
-  );
-}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+    pcrButton:{
+      backgroundColor: "red",
+      padding: 10,
+      borderRadius: 10,
+    },
+    pcrButtonText:{
+      color: "white"
+    }
+    
+});
 
-function UploadScreen({ navigation }) {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text></Text>
-      <Button
-        title="Upload Document"
-        onPress={() => navigation.navigate("PDF")}
-      />
-    </View>
-  );
-}
-function UploadedScreen() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Document Uploaded</Text>
-    </View>
-  );
-}
-const UploadStack = createStackNavigator(); //QR stack
-function UploadStackScreen() {
-  return (
-    <UploadStack.Navigator>
-      <UploadStack.Screen name="Upload" component={UploadScreen} />
-      <UploadStack.Screen name="PDF" component={UploadedScreen} />
-    </UploadStack.Navigator>
-  );
-}
-
-const Tab = createBottomTabNavigator();
-
-export default function App() {
+function App() {
   return (
     <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ focused, color, size }) => {
-            let iconName;
-
-            if (route.name === "Booking") {
-              iconName = "book";
-            } else if (route.name === "QR") {
-              iconName = "qrcode";
-            } else if (route.name === "Verification") {
-              iconName = "check";
-            } else if (route.name === "Upload") {
-              iconName = "upload";
-            }
-
-            // You can return any component that you like here!
-            return <FontAwesome name={iconName} size={size} color={color} />;
-            return <Octicons name={iconName} size={size} color={color} />;
-          },
-        })}
-        tabBarOptions={{
-          activeTintColor: "tomato",
-          inactiveTintColor: "gray",
-        }}
-      >
-        <Tab.Screen name="Booking" component={BookStackScreen} />
-        <Tab.Screen name="Upload" component={UploadStackScreen} />
-        <Tab.Screen name="Verification" component={VerificationStackScreen} />
-        <Tab.Screen name="QR" component={QRStackScreen} />
-      </Tab.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="PCRTest" component={PCRTest} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+export default App;
